@@ -1,23 +1,23 @@
-#server: 
-#  port: 8000
-#  servlet:
-#      context-path: /coronabook
-#      
-#
-#mybatis:
-#  mapper-locations: classpath:mapper/*.xml
-#
-#
-#      
-#spring: 
-#  mvc: 
-#    view:
-#      prefix: /WEB-INF/views/
-#      suffix: .jsp
-#      
-#  datasource: 
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://teraenergy.iptime.org:13306/lch?serverTimezone=UTC&useUniCode=yes&characterEncoding=UTF-8
-#    username: ojh
-#    password: ojh2021
+server: 
+  port: 8000
+  servlet:
+      context-path: /coronabook
+      
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+
+      
+spring: 
+  mvc: 
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+      
+  datasource: 
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://teraenergy.iptime.org:13306/lch?serverTimezone=UTC&useUniCode=yes&characterEncoding=UTF-8
+    username: ojh
+    password: ojh2021
 #    
