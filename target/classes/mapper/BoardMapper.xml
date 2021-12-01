@@ -3,8 +3,10 @@
     PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="mapper.BoardMapper">
-
+<mapper namespace="com.tera.groupware.attendance.mapper.BoardMapper">
+	<select resultType="camelmap" parameterType="map" id="getBoardListEx">
+		SELECT * FROM tbl_board
+	</select>
 	<select id="getBoardList" resultType="com.tera.groupware.attendance.model.BoardVO">
 		SELECT
 			BID, CATE_CD, TITLE, CONTENT, TAG, VIEW_CNT, REG_ID, REG_DT, EDIT_DT

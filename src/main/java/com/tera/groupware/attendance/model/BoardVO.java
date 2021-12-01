@@ -1,6 +1,7 @@
 package com.tera.groupware.attendance.model;
 
 public class BoardVO {
+	
 	private int bid;
 
 	private String cate_cd;
