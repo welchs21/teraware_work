@@ -13,6 +13,9 @@ import com.tera.groupware.attendance.service.BoardService;
 @RequestMapping(value = "/board")
 public class BoardController {
 	
+	// pull test!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	
+	
 	@Inject
 	private BoardService boardService;
 	
