@@ -20,11 +20,15 @@
 		</colgroup>
 		<thead>
 			<tr>
-				<th>NO</th>
-				<th>글제목</th>
-				<th>작성자</th>
-				<th>조회수</th>
-				<th>작성일</th>
+				<th>근무일자</th>
+				<th>사원번호</th>
+				<th>성명</th>
+				<th>출근시간</th>
+				<th>퇴근시간</th>
+				<th>수정출근시간</th>
+				<th>수정퇴근시간</th>
+				<th>출근IP</th>
+				<th>퇴근IP</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -35,11 +39,15 @@
 				<c:when test="${!empty boardList}">
 					<c:forEach var="list" items="${boardList}">
 						<tr>
-							<td><c:out value="${list.bid}"/></td>
-							<td><c:out value="${list.title}"/></td>
-							<td><c:out value="${list.tag}"/></td>
-							<td><c:out value="${list.viewCnt}"/></td>
-							<td><c:out value="${list.regDt}"/></td>
+							<td><c:out value="${list.attendDt}"/></td>														
+							<td><c:out value="${list.loginId}"/></td>
+							<td><c:out value="${list.krName}"/></td>
+							<td><c:out value="${list.officeIn}"/></td>
+							<td><c:out value="${list.officeOut}"/></td>
+							<td><c:out value="${list.officeInMod}"/></td>
+							<td><c:out value="${list.officeOutMod}"/></td>
+							<td><c:out value="${list.officialIpIn}"/></td>
+							<td><c:out value="${list.officialIpOut}"/></td>
 						</tr>
 					</c:forEach>
 				</c:when>

@@ -5,7 +5,23 @@
 
 <mapper namespace="com.tera.groupware.attendance.mapper.BoardMapper">
 	<select resultType="camelmap" parameterType="map" id="getBoardList">
-		SELECT * FROM tbl_board
+		select
+			am.office_in       as office_in    -- 출근시간
+	       ,am.office_out      as office_out    -- 퇴근시간      
+	       ,am.office_in_mod   as office_in_mod    -- 수정출근시간
+	       ,am.office_out_mod  as office_out_mod    -- 수정퇴근시간
+	       ,am.official_ip_in  as official_ip_in    -- 출근IP
+	       ,am.official_ip_out as official_ip_out    -- 출근IP
+	       ,am.del_yn          as del_yn    -- 삭제구분
+	       ,attend_dt          as attend_dt    -- 근무일자
+	       ,ui.kr_name         as kr_name    -- 이름
+	       ,ui.login_id        as login_id    -- 접속아이디
+        from attendance_mng am
+        left outer join user_info ui
+		on am.user_id = ui.user_id
+		where 1=1
+		and ui.user_id = '4'
+		and am.del_yn = 'n'				
 	</select>
 
 	<select id="getBoardContent" resultType="camelmap" parameterType="map">
