@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="/resources/css/style.css" rel="stylesheet" type="text/css">
+
 <meta charset="UTF-8">
 <title>board</title>
 </head>
@@ -35,9 +37,9 @@
 						<tr>
 							<td><c:out value="${list.bid}"/></td>
 							<td><c:out value="${list.title}"/></td>
-							<td><c:out value="${list.reg_id}"/></td>
-							<td><c:out value="${list.view_cnt}"/></td>
-							<td><c:out value="${list.reg_dt}"/></td>
+							<td><c:out value="${list.tag}"/></td>
+							<td><c:out value="${list.viewCnt}"/></td>
+							<td><c:out value="${list.regDt}"/></td>
 						</tr>
 					</c:forEach>
 				</c:when>
