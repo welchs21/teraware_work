@@ -4,6 +4,7 @@
 <html>
 <head>
 <link href="/resources/css/style.css" rel="stylesheet" type="text/css">
+<script src="/resources/js/jquery/jquery-3.6.0.min.js"></script>
 
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -13,15 +14,15 @@
 
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
 <meta charset="UTF-8">
 <title>board</title>
 </head>
 <body>
 <h2>board list</h2>
-<div>
+<div class = "button">
 	<button id="go" type="button"class="btn btn-default">출근</button>
 	<button id="out" type="button" class="btn btn-default">퇴근</button>
+	<button id="re" type="button" class="btn btn-default">수정</button>
 </div>
 	<table class="table table-bordered">
 		<colgroup>
@@ -51,7 +52,7 @@
 					</c:when> 
 					<c:when test="${!empty boardList}">
 						<c:forEach var="list" items="${boardList}">
-							<tr>
+							<tr class="danger">
 								<td><c:out value="${list.attendDt}"/></td>														
 								<td><c:out value="${list.loginId}"/></td>
 								<td><c:out value="${list.krName}"/></td>
@@ -72,18 +73,27 @@ let today = new Date();
 let hours = today.getHours(); // 시
 let minutes = today.getMinutes(); // 분
 var address = '<%=request.getRemoteAddr()%>';
-document.getElementById("go").onclick = function() {
-	alert('출근 클릭!');
-	document.getElementById("officeIn").innerText = hours + ':' + minutes;
-	document.getElementById("officeIpIn").innerText = address;
-}
+$(document).ready(function() {
+	$("#go").click(function() {
+		alert("출근 클릭!");
+		$("#officeIn").html(hours + ':' + minutes);
+		$("#officeIpIn").html(address);
+	})
+})
 
-document.getElementById("out").onclick = function() {
-	alert('퇴근 클릭!');
-	document.getElementById("officeOut").innerText = hours + ':' + minutes;
-	document.getElementById("officeIpOut").innerText = address;
-}
+$(document).ready(function() {
+	$("#out").click(function() {
+		alert("퇴근 클릭!");
+		$("#officeOut").html(hours + ':' + minutes);
+		$("#officeIpOut").html(address);
+	})
+})
 
+$(document).ready(function() {
+	$("#re").click(function() {
+		alert("수정 클릭!");
+	})
+})
 </script>
 </body>
 </html>
